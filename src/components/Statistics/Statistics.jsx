@@ -5,7 +5,7 @@ import { List, Section, Title } from './Statistics.styled';
 export const Statistics = ({ title, stats }) => {
   return (
     <Section>
-      {{ title } && <Title>{title}</Title>}
+      {title && <Title>{title}</Title>}
 
       <List>
         {stats.map(({ id, label, percentage }) => (
@@ -18,5 +18,11 @@ export const Statistics = ({ title, stats }) => {
 
 Statistics.propTypes = {
   title: PropTypes.string,
-  stats: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 };
