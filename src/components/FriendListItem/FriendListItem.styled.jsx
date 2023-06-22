@@ -21,7 +21,7 @@ export const Avatar = styled.img`
 `;
 
 export const Name = styled.p`
-  font-size: 20px;
+  font-size: 24px;
 `;
 
 export const Status = styled.span`
